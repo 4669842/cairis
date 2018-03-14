@@ -1,6 +1,7 @@
 FROM ubuntu:xenial
 MAINTAINER Shamal Faily <sfaily@bournemouth.ac.uk>
 RUN apt-get update && apt-get install -y python-dev build-essential mysql-client graphviz python-pip python-numpy git libmysqlclient-dev docbook python-apt dblatex texlive-latex-extra docbook-utils inkscape libxml2-dev libxslt1-dev libxslt1-dev apache2 apache2-dev poppler-utils
+RUN git clone https://github.com/4669842/cairis-d /
 COPY requirements.txt /
 COPY wsgi_requirements.txt /
 RUN pip install -r requirements.txt
